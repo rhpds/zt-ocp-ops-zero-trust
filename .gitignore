@@ -1,0 +1,3 @@
+# Antora cache and build output
+.cache/
+www/
