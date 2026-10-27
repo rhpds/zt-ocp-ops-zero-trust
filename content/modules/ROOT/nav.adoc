@@ -5,7 +5,7 @@
 * xref:index.adoc[Setup & Overview]
 
 // Zero Trust Module
-* xref:17-ztwim.adoc[Zero-Trust Workload Identity]
+* xref:01-ztwim.adoc[Zero-Trust Workload Identity]
 
 // Conclusion
 * xref:99-conclusion.adoc[Wrap Up]
