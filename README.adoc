@@ -11,7 +11,7 @@ This workshop demonstrates how to eliminate static database credentials by imple
 === Workshop Content
 
 * *link:content/modules/ROOT/pages/index.adoc[Setup & Overview]* (10-15 min) - Lab access, ZTWIM verification, zero trust concepts, SPIFFE/SPIRE fundamentals
-* *link:content/modules/ROOT/pages/17-ztwim.adoc[Zero-Trust Workload Identity]* (20-30 min) - Configure ZTWIM/SPIRE, deploy PostgreSQL with certificate-based auth, inspect SPIFFE certificates, establish mTLS connections, verify access control
+* *link:content/modules/ROOT/pages/01-ztwim.adoc[Zero-Trust Workload Identity]* (20-30 min) - Configure ZTWIM/SPIRE, deploy PostgreSQL with certificate-based auth, inspect SPIFFE certificates, establish mTLS connections, verify access control
 * *link:content/modules/ROOT/pages/99-conclusion.adoc[Wrap Up]* (5 min) - Summary, key takeaways, next steps
 
 === What You'll Learn
