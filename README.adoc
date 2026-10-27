@@ -1,56 +1,37 @@
-= OpenShift Ops Day Roadshow
+= Zero Trust Workload Identity Workshop
 
-Showroom content for the OpenShift Ops Day Roadshow, covering Day 2 operations for OpenShift administrators.
+A focused hands-on workshop covering Zero Trust database authentication using SPIFFE/SPIRE and the Zero Trust Workload Identity Manager (ZTWIM) on OpenShift.
 
 == Workshop Overview
 
-A comprehensive modular workshop for OpenShift administrators. Modules are selectable at catalog order time so instructors can tailor the content to their audience.
+This workshop demonstrates how to eliminate static database credentials by implementing cryptographic workload identity with SPIFFE (Secure Production Identity Framework for Everyone) and SPIRE on OpenShift. Learn how to establish mutual TLS (mTLS) database connections using short-lived X.509 certificates instead of passwords.
 
-=== Available Modules
+**Duration:** 45-60 minutes total
 
-*Getting Started*
+=== Workshop Content
 
-* *link:content/modules/ROOT/pages/index.adoc[Setup & Overview]* (15-20 min) - Lab access, Showroom interface, CLI verification, platform overview, console, monitoring, registry, routing, upgrades, operator ecosystem
-* *link:content/modules/ROOT/pages/01-installation.adoc[01 - Installation & Verification]* (10 min) - ClusterOperator health, node status, etcd metrics, storage provisioning, update channels
+* *link:content/modules/ROOT/pages/index.adoc[Setup & Overview]* (10-15 min) - Lab access, ZTWIM verification, zero trust concepts, SPIFFE/SPIRE fundamentals
+* *link:content/modules/ROOT/pages/17-ztwim.adoc[Zero-Trust Workload Identity]* (20-30 min) - Configure ZTWIM/SPIRE, deploy PostgreSQL with certificate-based auth, inspect SPIFFE certificates, establish mTLS connections, verify access control
+* *link:content/modules/ROOT/pages/99-conclusion.adoc[Wrap Up]* (5 min) - Summary, key takeaways, next steps
 
-*Core Operations*
+=== What You'll Learn
 
-* *link:content/modules/ROOT/pages/02-app-mgmt.adoc[02 - Application Management]* (15-20 min) - Deployment, Routes with TLS, scaling, self-healing, probes, rollback, PodDisruptionBudgets
-* *link:content/modules/ROOT/pages/03-ingress-loadbalancing.adoc[03 - Ingress & Load Balancing]* (25 min) - Ingress Controller, Routes with TLS termination, rate limiting, IP allowlist, Services
-* *link:content/modules/ROOT/pages/04-network-security.adoc[04 - Network Security]* (10-15 min) - OVN-Kubernetes, NetworkPolicy, AdminNetworkPolicy, EgressFirewall, EgressIP
-* *link:content/modules/ROOT/pages/05-debugging-troubleshooting.adoc[05 - Debugging & Troubleshooting]* (10-15 min) - Diagnostic toolkit, fixing ImagePullBackOff, CrashLoopBackOff, resource constraints, SCC permissions
-* *link:content/modules/ROOT/pages/06-gitops.adoc[06 - OpenShift GitOps]* (10-15 min) - ArgoCD, app deployment from Git, drift detection, self-healing
+* **Eliminate static credentials** - Replace database passwords with cryptographic identity
+* **Configure SPIFFE/SPIRE** - Set up the Zero Trust Workload Identity Manager
+* **Deploy PostgreSQL with mTLS** - Configure certificate-based authentication
+* **Inspect certificates** - Examine short-lived X.509 certificates and SPIFFE IDs
+* **Establish mTLS connections** - Connect to databases using certificates instead of passwords
+* **Verify zero trust enforcement** - Confirm unauthorized workloads are rejected
+* **Understand automatic rotation** - See how certificates renew without downtime
 
-*Identity & Access*
+=== Zero Trust Principles
 
-* *link:content/modules/ROOT/pages/07-ldap-authentication.adoc[07 - LDAP Authentication]* (15-20 min) - OAuth configuration, LDAP structure, group sync, RBAC
-* *link:content/modules/ROOT/pages/08-oidc-authentication.adoc[08 - OIDC Authentication]* (15-20 min) - Red Hat build of Keycloak deployment, OIDC configuration, group sync, RBAC
+This workshop puts these zero trust principles into practice:
 
-*Day 2 Operations*
-
-* *link:content/modules/ROOT/pages/09-observability.adoc[09 - Observability & Logging]* (35-40 min) - Prometheus metrics, dashboards, user workload monitoring, Alertmanager, OpenTelemetry distributed tracing, logging stack
-* *link:content/modules/ROOT/pages/10-performance-tuning.adoc[10 - Performance Tuning]* (15-20 min) - Resource diagnostics, VPA right-sizing, HPA autoscaling, performance monitoring
-
-*Advanced Topics*
-
-* *link:content/modules/ROOT/pages/11-virtualization.adoc[11 - Virtualization]* (20-25 min) - VM creation, networking, live migration, cloning, snapshots
-* *link:content/modules/ROOT/pages/12-developer-hub.adoc[12 - Developer Hub]* (25-30 min) - Software catalog, Topology plugin, software templates, platform architecture
-* *link:content/modules/ROOT/pages/13-openshift-lightspeed.adoc[13 - OpenShift Lightspeed]* (15-20 min) - AI assistant, OLSConfig creation, console integration
-* *link:content/modules/ROOT/pages/14-acm.adoc[14 - ACM Multi-Cluster Management]* (30 min) - ACM, hosted control planes, VM management, GitOps app deployment, policy-based governance
-* *link:content/modules/ROOT/pages/15-acs.adoc[15 - Advanced Cluster Security]* (20 min) - Workload scanning with RHACS, compliance, runtime security
-* *link:content/modules/ROOT/pages/16-secrets-management.adoc[16 - Secrets Management (HashiCorp Vault)]* (25 min) - Vault Helm deploy on OpenShift, Kubernetes auth, pod secret injection
-* *link:content/modules/ROOT/pages/17-ztwim.adoc[17 - Zero-Trust Database Access with SPIFFE mTLS]* (45 min) - ZTWIM operator, SPIFFE/SPIRE workload identity, PostgreSQL mTLS without passwords
-
-== Module Selection
-
-Modules are selectable at catalog order time. The navigation dynamically shows/hides content based on which modules are enabled.
-
-Catalog parameters (`module_enable_*`) control both:
-
-* Which operators/workloads get deployed
-* Which content appears in the workshop navigation
-
-See link:content/modules/ROOT/nav.adoc[nav.adoc] for the conditional navigation logic using `ifeval`.
+1. **Never trust, always verify** - Cryptographically verify every connection
+2. **Assume breach** - Minimize blast radius with short-lived credentials
+3. **Least privilege** - Each workload gets only the identity it needs
+4. **Verify explicitly** - Authenticate based on what the workload is, not where it runs
 
 == Local Development
 

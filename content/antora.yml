@@ -1,12 +1,12 @@
-name: openshift-days-ops-track
-title: OpenShift Ops Day Roadshow
+name: openshift-zero-trust
+title: Zero Trust Workload Identity
 version: main
 nav:
   - modules/ROOT/nav.adoc
 
 asciidoc:
   attributes:
-    lab_name: "OpenShift Ops Day Roadshow"
+    lab_name: "Zero Trust Workload Identity"
     release-version: main
     page-pagination: true
     guid: my-guid

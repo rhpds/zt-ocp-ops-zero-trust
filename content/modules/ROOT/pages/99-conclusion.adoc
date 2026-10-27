@@ -1,11 +1,72 @@
-= Thank You for Completing the Workshop
+= Wrap Up
 
-**Thank you for attending the OpenShift Ops Day Roadshow.**
+**Thank you for completing the Zero Trust Workload Identity workshop!**
 
-We hope you found the hands-on exercises valuable. If you have any further questions, please ask your instructor.
+== What You Accomplished
 
-== Additional Resources
+In this hands-on workshop, you:
 
-* link:https://docs.redhat.com/en/documentation/openshift_container_platform/4.20[OpenShift Documentation, window=blank]
-* link:https://developers.redhat.com/learn/openshift[OpenShift Learning, window=blank]
-* link:https://www.redhat.com/en/services/training-and-certification[Red Hat Training & Certification, window=blank]
+* **Configured ZTWIM and SPIRE** to provide automatic cryptographic identity for workloads
+* **Deployed PostgreSQL** with certificate-based authentication using SPIFFE-issued X.509 certificates
+* **Established mTLS connections** between a client workload and PostgreSQL without any database passwords
+* **Inspected SPIFFE certificates** to understand short-lived credentials, automatic rotation, and identity binding
+* **Verified zero trust enforcement** by confirming that unauthorized workloads without valid certificates are rejected
+* **Eliminated static credentials** from your database authentication workflow
+
+== Key Takeaways
+
+Zero Trust Workload Identity with SPIFFE and ZTWIM enables you to:
+
+* **Remove passwords entirely** - No more static credentials in Secrets, environment variables, or configuration files
+* **Cryptographically verify identity** - Each workload proves its identity with short-lived X.509 certificates
+* **Automatic credential rotation** - Certificates are renewed before expiration without manual intervention or downtime
+* **Mutual authentication** - Both client and server verify each other's identity before establishing connections
+* **Audit who connects** - Certificate CNs map to specific workloads, not shared credentials
+* **Follow zero trust principles** - "Never trust, always verify" with cryptographic proof of identity
+
+== Zero Trust Beyond Databases
+
+The same SPIFFE/SPIRE pattern demonstrated with PostgreSQL applies to:
+
+**Service-to-Service Communication:**
+
+* Mutual TLS between microservices
+* No more shared API keys or service tokens
+* Each service proves its identity cryptographically
+
+**Message Brokers:**
+
+* Kafka with mTLS authentication
+* RabbitMQ with certificate-based authentication
+* No shared credentials for producers/consumers
+
+**API Authentication:**
+
+* REST APIs with mTLS
+* gRPC services with SPIFFE authentication
+* Eliminate bearer tokens and API keys
+
+**Secrets Management:**
+
+* Combine with HashiCorp Vault for SPIFFE-authenticated secret retrieval
+* No long-lived Vault tokens
+
+== Next Steps
+
+**Expand Your Zero Trust Implementation:**
+
+* Apply SPIFFE authentication to other databases (MySQL, MongoDB, Redis)
+* Implement service mesh with SPIFFE (Istio, Linkerd)
+* Integrate with HashiCorp Vault using SPIFFE authentication
+* Set up SPIFFE federation between clusters
+
+**Additional Learning:**
+
+* link:https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/zero_trust_workload_identity_manager/index[Zero Trust Workload Identity Manager Documentation, window=blank]
+* link:https://spiffe.io/[SPIFFE Specification and Documentation, window=blank]
+* link:https://spiffe.io/docs/latest/spire-about/[SPIRE Project Documentation, window=blank]
+* link:https://www.redhat.com/en/topics/security/what-is-zero-trust[Red Hat Zero Trust Overview, window=blank]
+
+**Questions?**
+
+If you have questions about implementing zero trust workload identity in your environment, please reach out to your Red Hat account team or instructor.
