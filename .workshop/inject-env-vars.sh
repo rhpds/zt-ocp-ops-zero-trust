@@ -20,7 +20,9 @@ if [ -d "/user_data" ]; then
     echo "Reading environment variables from /user_data/"
 
     # Source all environment variable files
-    for env_file in /user_data/*.env 2>/dev/null; do
+    for env_file in /user_data/*.env; do
+        # Skip if glob didn't match any files
+        [ -e "$env_file" ] || continue
         if [ -f "$env_file" ]; then
             echo "Sourcing $env_file"
             set -a
