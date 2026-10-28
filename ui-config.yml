@@ -9,7 +9,7 @@ view_switcher:
   default_mode: split
 
 antora:
-  name: openshift-days-ops-track
+  name: openshift-zero-trust
   version: main
 
 tabs:
